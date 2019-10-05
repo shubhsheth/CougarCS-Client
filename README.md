@@ -8,6 +8,7 @@ All todos and tasked are on Trello.
 
 * Vyas ( Developer - Fullstack )
 * Conrad ()
+* Zachary (Developer - FrontEnd)
 * Madeline ( Content )
 
 # Timeline
