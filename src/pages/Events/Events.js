@@ -11,6 +11,7 @@ class Events extends React.Component {
           events={events}
           fixedWeekCount={false}
         /> */}
+         {/* eslint-disable-next-line */}
         <iframe
           src={
             "https://calendar.google.com/calendar/embed?src=aeu0ag4i5a7aag0hkvco4goung%40group.calendar.google.com&ctz=America%2FChicago"

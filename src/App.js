@@ -8,6 +8,7 @@ import Careerfair from './pages/CareerFair/Careerfair';
 import Events from './pages/Events/Events';
 import Home from './pages/Home/Home';
 import Membership from './pages/Membership/Membership';
+import Gallery from './pages/Gallery/Gallery';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" exact component={Home} />
       <Route path="/about/" component={About} />
       <Route path="/membership/" component={Membership} />
+      <Route path="/gallery/" component={Gallery} />
       <Route path="/events/" component={Events} />
       <Route path="/careerfair/" component={Careerfair} />
     </Router>

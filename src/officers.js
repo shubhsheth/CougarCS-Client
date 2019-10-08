@@ -8,6 +8,7 @@ import naveed from './assets/naveed.JPG';
 import nilanjan from './assets/nilanjan.jpeg';
 import rizwan from './assets/rizwan.png';
 import vyas from './assets/vyas_r-1.jpeg';
+import zach from './assets/zach_p.jpeg'
 
 // i.khatkhatay@cougarcs.com
 // harrison.hayes@cougarcs.com
@@ -19,6 +20,7 @@ import vyas from './assets/vyas_r-1.jpeg';
 // jesus.delr@cougarcs.com
 // jacob.medel@cougarcs.com
 // mfwilson@cougarcs.com
+// zach.page@cougarcs.com
 const officers = [
   {
     id: 1,
@@ -99,6 +101,14 @@ const officers = [
     linkedin: '',
     email: 'rizwan.khan@cougarcs.com',
     title: 'Director of Activities'
+  },
+  {
+    id: 11,
+    name: 'Zachary Page',
+    image: zach,
+    linkedin: '',
+    email: 'zach.page@cougarcs.com',
+    title: 'Historian'
   }
 ];
 
