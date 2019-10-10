@@ -8,9 +8,10 @@ import Careerfair from './pages/CareerFair/Careerfair';
 import Events from './pages/Events/Events';
 import Home from './pages/Home/Home';
 import Membership from './pages/Membership/Membership';
+import Points from './pages/Points/Points';
 import Gallery from './pages/Gallery/Gallery';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <NavBar />
@@ -20,7 +21,8 @@ function App() {
       <Route path="/gallery/" component={Gallery} />
       <Route path="/events/" component={Events} />
       <Route path="/careerfair/" component={Careerfair} />
-    </Router>
+      <Route path="/points/" component={Points} />
+    </Router >
   );
 }
 
