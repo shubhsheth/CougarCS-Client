@@ -21,6 +21,24 @@
     font-size: 18px;
 }
 
+.events-grid {
+    display: grid;
+    grid-template-columns: reapeat(4, 1fr);
+}
+
+.events-card {
+    border-radius: 3px;
+    position: relative;
+}
+
+.events-card img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
 .tz-gallery {
     padding: 40px;
 }
