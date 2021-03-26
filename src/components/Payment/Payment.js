@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { Form, Col, Button } from 'react-bootstrap';
+import { Form, Col, Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import { load } from 'recaptcha-v3';
 import SuccessModal from './../Modals/SuccessModal';
 import ErrorModal from './../Modals/ErrorModal';
@@ -20,6 +20,7 @@ export const Payment = () => {
 		classification: '',
 		paidUntil: '',
 		phone: '',
+		discordName: ''
 	});
 	const [loading, setLoading] = useState(false);
 	const [buttonText, setButtonText] = useState('Submit');
@@ -116,6 +117,7 @@ export const Payment = () => {
 			classification: '',
 			paidUntil: '',
 			phone: '',
+			discordName: ''
 		});
 
 		elements.getElement(CardElement).clear();
@@ -130,7 +132,7 @@ export const Payment = () => {
 				show={errorModal}
 				handleClose={() => setErrorModal(false)}></ErrorModal>
 			<Form.Row>
-				<Form.Group as={Col} controlId='formGridFirstName'>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridFirstName'>
 					<Form.Label>First Name</Form.Label>
 					<Form.Control
 						type='text'
@@ -142,7 +144,7 @@ export const Payment = () => {
 					/>
 				</Form.Group>
 
-				<Form.Group as={Col} controlId='formGridLastName'>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridLastName'>
 					<Form.Label>Last Name</Form.Label>
 					<Form.Control
 						type='text'
@@ -156,7 +158,7 @@ export const Payment = () => {
 			</Form.Row>
 
 			<Form.Row>
-				<Form.Group as={Col} controlId='formGridEmail'>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridEmail'>
 					<Form.Label>Email</Form.Label>
 					<Form.Control
 						type='text'
@@ -168,7 +170,7 @@ export const Payment = () => {
 					/>
 				</Form.Group>
 
-				<Form.Group as={Col} controlId='formGridPhoneNumber'>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridPhoneNumber'>
 					<Form.Label>Phone Number</Form.Label>
 					<Form.Control
 						type='tel'
@@ -183,7 +185,7 @@ export const Payment = () => {
 			</Form.Row>
 
 			<Form.Row>
-				<Form.Group as={Col} controlId='formGridClassification'>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridClassification'>
 					<Form.Label>Classification</Form.Label>
 					<Form.Control
 						as='select'
@@ -201,7 +203,7 @@ export const Payment = () => {
 					</Form.Control>
 				</Form.Group>
 
-				<Form.Group as={Col} controlId='formGridUhID'>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridUhID'>
 					<Form.Label>UHID</Form.Label>
 					<Form.Control
 						type='text'
@@ -216,7 +218,7 @@ export const Payment = () => {
 			</Form.Row>
 
 			<Form.Row>
-				<Form.Group as={Col} controlId='formGridClassification'>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridClassification'>
 					<Form.Label>Payment For</Form.Label>
 					<Form.Control
 						as='select'
@@ -228,6 +230,32 @@ export const Payment = () => {
 						<option value='semester'>Semester ($10)</option>
 						<option value='year'>Year ($18)</option>
 					</Form.Control>
+				</Form.Group>
+				<Form.Group as={Col} md="6" xs="12" controlId='formGridDiscordName'>
+					<Form.Label>Discord Name 
+						
+						<OverlayTrigger
+							trigger="click"
+							key="top"
+							placement="top"
+							overlay={
+								<Popover id={`popover-positioned-top`}>
+								<Popover.Content>
+									Provide your discord name to get exclusive member benifits on the server
+								</Popover.Content>
+								</Popover>
+							}
+						>
+							<i class="fas fa-info-circle discord-info"></i>
+						</OverlayTrigger>	
+					</Form.Label>
+					<Form.Control
+						type='text'
+						placeholder='(Optional)'
+						onChange={(e) => handleChange(e)}
+						name='discordName'
+						value={user.discordName}
+					/>
 				</Form.Group>
 			</Form.Row>
 
